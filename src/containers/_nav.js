@@ -20,23 +20,23 @@ const _nav =
   {
     sidebarNav: [
       {
-        _tag: 'CustomSidebarNavItem',
+        _tag: 'CustomSidebarDropdownItem',
         name: 'APM Matrix',
         to: '/apm-matrix',
         icon: <APMMatrixIcon className="sidebar-icon"/>
       },
       {
-        _tag: 'CustomSidebarNavItem',
+        _tag: 'CustomSidebarDropdownItem',
         name: 'Dashboard',
         icon: <DashboardIcon className="sidebar-icon"/>,
       },
       {
-        _tag: 'CustomSidebarNavItem',
+        _tag: 'CustomSidebarDropdownItem',
         name: 'Inventory',
         icon: <InventoryIcon className="sidebar-icon"/>,
       },
       {
-        _tag: 'CustomSidebarNavItem',
+        _tag: 'CustomSidebarDropdownItem',
         name: 'Reports',
         to: '/reports',
         icon: <ReportsIcon className="sidebar-icon"/>
@@ -62,21 +62,21 @@ const _nav =
           }
         ]
       },
-      {
-        _tag: 'CustomSidebarDropdownMenu',
-        _children: [
-          {
-            _tag: 'CustomSidebarDropdownItem',
-            name: 'Add New Application',
-            to: '/inventory/add-new-application',
-          },
-          {
-            _tag: 'CustomSidebarDropdownItem',
-            name: 'Update Application',
-            to: '/inventory/update-application',
-          }
-        ]
-      },
+      // {
+      //   _tag: 'CustomSidebarDropdownMenu',
+      //   _children: [
+      //     {
+      //       _tag: 'CustomSidebarDropdownItem',
+      //       name: 'Add New Application',
+      //       to: '/inventory/add-new-application',
+      //     },
+      //     {
+      //       _tag: 'CustomSidebarDropdownItem',
+      //       name: 'Update Application',
+      //       to: '/inventory/update-application',
+      //     }
+      //   ]
+      // },
     ]
   }
   // {
