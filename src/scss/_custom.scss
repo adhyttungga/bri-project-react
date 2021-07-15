@@ -1,13 +1,13 @@
 // Here you can add other styles
 // @import "../../node_modules/@coreui/coreui/scss/coreui";
-
+// .c-sidebar {}
 .sidebar-root {
+  overflow-x: auto;
   // height: 1546px;
   width: 252px;
   left: 14px;
   top: 0px;
   border-radius: 0px;
-  position: absolute;
   left: 5.28%;
   right: -0.38%;
   top: 0%;
@@ -20,6 +20,22 @@
     ),
     url(../assets/images/sidebar-background.png);
 }
+.sidebar-dropdown-menu {
+  position: fixed;
+  left: 250px;
+  top: 170px;
+  z-index: 2000;
+  width: 0;
+  .custom-dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
+}
 
 .sidebar-icon {
   height: 24px;
@@ -28,7 +44,18 @@
 }
 
 .custom-sidebar-nav-item {
-  a {
+  border-left: 4px solid transparent;
+  .custom-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8445rem 2rem;
+    text-decoration: none;
+    color: #a4d4ff;
+    background: transparent;
+    cursor: pointer;
+    &:hover {
+      color: #a4d4ff;
+    }
     &::after {
       background-image: url(../assets/icons/ic_outline-arrowright.svg);
       margin-left: auto;
@@ -44,6 +71,16 @@
     }
   }
 }
+.selected {
+  border-left: 4px solid white;
+  background: rgba(255, 255, 255, 0.08);
+  .custom-dropdown-item {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+}
 
 .custom-dropdown-menu {
   background: white;
@@ -51,6 +88,11 @@
   width: 225px;
   height: 112px;
   justify-content: space-between;
+  list-style-type: none;
+  border: 1px solid #d1d1d1;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
   & a {
     color: black;
   }
@@ -103,6 +145,7 @@
   height: 109px;
   width: 196px;
   margin: auto;
+  margin-top: 340px;
   span {
     margin: 19px auto 0;
   }

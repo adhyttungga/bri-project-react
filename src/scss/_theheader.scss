@@ -1,3 +1,9 @@
+.header {
+  justify-content: space-between;
+  .c-header-brand {
+    margin-left: 36px;
+  }
+}
 .btn-search {
   background: rgb(0, 0, 0, 0);
   border-color: rgb(0, 0, 0, 0);
@@ -43,14 +49,17 @@
   }
 }
 
-.divider {
-  width: 34px;
-  border: 1px solid #e9e9e9;
-  transform: rotate(90deg);
+.header-nav {
+  .divider {
+    width: 34px;
+    border: 1px solid #e9e9e9;
+    transform: rotate(90deg);
+  }
 }
 
 .c-avatar {
-  min-width: 15rem;
+  min-width: 12.5rem;
+  justify-content: space-between;
   .c-avatar-img {
     width: 33px;
     height: 33px;
