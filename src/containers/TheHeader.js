@@ -23,9 +23,7 @@ import routes from '../routes'
 
 import { 
   TheHeaderDropdown,
-  TheHeaderDropdownMssg,
-  TheHeaderDropdownNotif,
-  TheHeaderDropdownTasks
+  TheHeaderDropdownSetting,
 }  from './index'
 
 const TheHeader = () => {
@@ -43,35 +41,12 @@ const TheHeader = () => {
   }
 
   return (
-    <CHeader withSubheader>
-      <CToggler
-        inHeader
-        className="ml-md-3 d-lg-none"
-        onClick={toggleSidebarMobile}
-      />
-      <CToggler
-        inHeader
-        className="ml-3 d-md-down-none"
-        onClick={toggleSidebar}
-      />
+    <CHeader className="header">
       <CHeaderBrand className="">
         <span>Application Portofolio Management (APM) Dashboard</span>
-        {/* <CIcon name="logo" height="48" alt="Logo"/> */}
       </CHeaderBrand>
 
-      {/* <CHeaderNav className="d-md-down-none mr-auto">
-        <CHeaderNavItem className="px-3" >
-          <CHeaderNavLink to="/dashboard">Dashboard</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/users">Users</CHeaderNavLink>
-        </CHeaderNavItem>
-        <CHeaderNavItem className="px-3">
-          <CHeaderNavLink>Settings</CHeaderNavLink>
-        </CHeaderNavItem>
-      </CHeaderNav> */}
-
-      <CHeaderNav className="px-3">
+      <CHeaderNav className="px-3 header-nav">
         <CForm inline>
           <CButton color="light" className="btn-search my-2 my-sm-0" type="submit"><SearchIcon className="header-icon"/></CButton>
           <CInput
@@ -81,33 +56,9 @@ const TheHeader = () => {
           />
         </CForm>
         <div className="divider"/>
-        <TheHeaderDropdownNotif/>
-        {/* <TheHeaderDropdownTasks/>
-        <TheHeaderDropdownMssg/> */}
+        <TheHeaderDropdownSetting/>
         <TheHeaderDropdown/>
       </CHeaderNav>
-
-      {/* <CSubheader className="px-3 justify-content-between">
-        <CBreadcrumbRouter 
-          className="border-0 c-subheader-nav m-0 px-0 px-md-3" 
-          routes={routes} 
-        />
-          <div className="d-md-down-none mfe-2 c-subheader-nav">
-            <CLink className="c-subheader-nav-link"href="#">
-              <CIcon name="cil-speech" alt="Settings" />
-            </CLink>
-            <CLink 
-              className="c-subheader-nav-link" 
-              aria-current="page" 
-              to="/dashboard"
-            >
-              <CIcon name="cil-graph" alt="Dashboard" />&nbsp;Dashboard
-            </CLink>
-            <CLink className="c-subheader-nav-link" href="#">
-              <CIcon name="cil-settings" alt="Settings" />&nbsp;Settings
-            </CLink>
-          </div>
-      </CSubheader> */}
     </CHeader>
   )
 }
