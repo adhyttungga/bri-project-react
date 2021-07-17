@@ -154,9 +154,18 @@ const BusinessDashboard = () => {
                       fontFamily: 'Poppins',
                       fontColor: "#939393",
                       usePointStyle: true,
+                      padding: 30
                     }
                   },
-                  aspectRatio: 1.15,
+                  layout: {
+                    padding: {
+                      top: 30,
+                      left: 0,
+                      right: 0,
+                      bottom: 0
+                    }
+                  },
+                  aspectRatio: 1.05,
                   elements: {
                     line: {
                       fill: false
@@ -231,9 +240,18 @@ const BusinessDashboard = () => {
                       fontFamily: 'Poppins',
                       fontColor: "#939393",
                       usePointStyle: true,
+                      padding: 30
+                    }
+                  },  
+                  layout: {
+                    padding: {
+                      top: 30,
+                      left: 0,
+                      right: 0,
+                      bottom: 0
                     }
                   },
-                  aspectRatio: 1.15,
+                  aspectRatio: 1.05,
                   cutoutPercentage: 75,
                   elements: {
                     line: {
@@ -309,9 +327,18 @@ const BusinessDashboard = () => {
                       fontFamily: 'Poppins',
                       fontColor: "#939393",
                       usePointStyle: true,
+                      padding: 30
                     }
                   },
-                  aspectRatio: 1.15,
+                  layout: {
+                    padding: {
+                      top: 30,
+                      left: 0,
+                      right: 0,
+                      bottom: 0
+                    }
+                  },
+                  aspectRatio: 1.05,
                   cutoutPercentage: 75,
                   elements: {
                     line: {

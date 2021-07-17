@@ -77,7 +77,7 @@ const _plugins = [
         if (dataset.polyline && dataset.polyline.formatter) {
           value = dataset.polyline.formatter(value, dataset);
         }
-        let edgePointX = point2X < chartCenterPoint.x ? 10 : chart.width - 10;
+        let edgePointX = point2X < chartCenterPoint.x ? 5 : chart.width - 5;
 
         if (point2X < chartCenterPoint.x) {
           leftLabelCoordinates.push(point2Y);
