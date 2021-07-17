@@ -22,6 +22,8 @@ import {
 
 import { list, read } from './api-dashboard'
 
+import plugins from './_plugins'
+
 const BusinessDashboard = () => {
   const [datas, setDatas] = React.useState([])
   const [barDatas, setBarDatas] = React.useState([])
@@ -126,13 +128,23 @@ const BusinessDashboard = () => {
                     data: chartDummy.map((e)=>e.value),
                     datalabels: {
                       anchor: 'end'
+                    },
+                    borderWidth: 0,
+                    polyline: {
+                      color: "gray",
+                      labelColor: "gray",
+                      formatter: (value, dataset) => {
+                        let sum = dataset.data.reduce((a,b)=>a+b);
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage;
+                      }
                     }
                   }
                 ]}
                 labels={chartDummy.map((e)=>e.status)}
                 options={{
                   tooltips: {
-                    enabled: true
+                    enabled: false
                   },
                   legend: {
                     position: 'bottom',
@@ -144,7 +156,7 @@ const BusinessDashboard = () => {
                       usePointStyle: true,
                     }
                   },
-                  aspectRatio: 1.1,
+                  aspectRatio: 1.15,
                   elements: {
                     line: {
                       fill: false
@@ -171,6 +183,7 @@ const BusinessDashboard = () => {
                     }
                   },
                 }}
+                plugins={plugins}
               />
             </CCardBody>
           </CCard>
@@ -193,6 +206,16 @@ const BusinessDashboard = () => {
                       '#DD1B16'
                     ],
                     data: chartDummy.map((e)=>e.value),
+                    borderWidth: 0,
+                    polyline: {
+                      color: "gray",
+                      labelColor: "gray",
+                      formatter: (value, dataset) => {
+                        let sum = dataset.data.reduce((a,b)=>a+b);
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage;
+                      }
+                    }
                   }
                 ]}
                 labels={chartDummy.map((e)=>e.status)}
@@ -210,7 +233,7 @@ const BusinessDashboard = () => {
                       usePointStyle: true,
                     }
                   },
-                  aspectRatio: 1.1,
+                  aspectRatio: 1.15,
                   cutoutPercentage: 75,
                   elements: {
                     line: {
@@ -238,6 +261,7 @@ const BusinessDashboard = () => {
                     }
                   },
                 }}
+                plugins={plugins}
               />
             </CCardBody>
           </CCard>
@@ -260,6 +284,16 @@ const BusinessDashboard = () => {
                       '#DD1B16'
                     ],
                     data: chartDummy.map((e)=>e.value),
+                    borderWidth: 0,
+                    polyline: {
+                      color: "gray",
+                      labelColor: "gray",
+                      formatter: (value, dataset) => {
+                        let sum = dataset.data.reduce((a,b)=>a+b);
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage;
+                      }
+                    }
                   }
                 ]}
                 labels={chartDummy.map((e)=>e.status)}
@@ -277,7 +311,7 @@ const BusinessDashboard = () => {
                       usePointStyle: true,
                     }
                   },
-                  aspectRatio: 1.1,
+                  aspectRatio: 1.15,
                   cutoutPercentage: 75,
                   elements: {
                     line: {
@@ -303,6 +337,7 @@ const BusinessDashboard = () => {
                     }
                   },
                 }}
+                plugins={plugins}
               />
             </CCardBody>
           </CCard>
