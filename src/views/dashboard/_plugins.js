@@ -108,12 +108,7 @@ const _plugins = [
         ctx.fillText(value, labelX, labelY);
       });
       ctx.restore();
-    },
-    // beforeInit: function(chart, options) {
-    //   chart.legend.afterFit = function() {
-    //     this.height += 10; 
-    //   };
-    // }
+    }
   }
 ];
 
