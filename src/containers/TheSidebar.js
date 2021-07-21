@@ -90,31 +90,9 @@ const TheSidebar = () => {
             name="sygnet"
             height={35}
           />
-          {/* <CIcon
-            className="c-sidebar-brand-full"
-            name="logo-negative"
-            height={35}
-          /> */}
-          {/* <CIcon
-            className="c-sidebar-brand-minimized"
-            name="sygnet"
-            height={35}
-          /> */}
         </CSidebarBrand>
         <div>
           <CSidebarNav>
-            {/* <CSidebarNavItem icon={<APMMatrixIcon className="sidebar-icon"/>} name="CSidebarNavItem" /> */}
-            {/* <CCreateElement
-              items={navigation.sidebarNav}
-              components={{
-                CSidebarNavDivider,
-                CSidebarNavDropdown,
-                CSidebarNavItem,
-                CSidebarNavTitle,
-                CustomSidebarNavItem,
-                CustomSidebarDropdownItem
-              }}
-            /> */}
             {
               _nav.map((nav, index) => {
                 return (
@@ -136,18 +114,9 @@ const TheSidebar = () => {
         <CCard className="sidebar-contactus">
           <span>Have any problem ?</span>
           <CButton className="btn-contactus btn-brand"><PhoneIcon className="sidebar-icon"/><span className="mfs-2">Contact us</span></CButton>
-          {/* <CSidebarNavItem icon={<PhoneIcon className="sidebar-icon"/>} name="Contact Us" /> */}
         </CCard>
-        {/* <CSidebarMinimizer className="c-d-md-down-none"/> */}
       </CSidebar>
       <div className="sidebar-dropdown-menu">
-        {/* <CCreateElement
-          items={navigation.dropdownMenu}
-          components={{
-            CustomSidebarDropdownMenu,
-            CustomSidebarDropdownItem
-          }}
-        /> */}
         <CustomSidebarDropdownMenu navs={navs} dropdown={dropdown} parent={"dashboard"}>
           {
             _dropdown.map((dropdown, index) => {
@@ -167,19 +136,6 @@ const TheSidebar = () => {
     </>
   )
 }
-
-// const CustomSidebarNavItem = (props) => {
-//   const { icon, name, to, children}  = props
-//   const toggleNav = (name) => {
-//     console.log(name)
-//   }
-
-//   return(
-//     <>
-//       <CSidebarNavItem icon={icon} name={name} to={to} onClick={e => toggleNav} className="custom-sidebar-nav-item" />
-//     </>
-//   )
-// }
 
 const CustomSidebarDropdownMenu = (props) => {
   const { children, navs, dropdown, parent } = props
