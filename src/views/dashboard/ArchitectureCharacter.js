@@ -106,8 +106,8 @@ const ArchitectureCharacter = () => {
           </CCardHeader>
         </CCard>
       </CCardGroup>
-      <CCardGroup columns className="cols-2">
-        {/* <CRow> */}
+      <CRow>
+        <CCol sm="12" lg="6">
           <CCard >
             <CCardHeader>
               ITEA Alignment
@@ -203,7 +203,8 @@ const ArchitectureCharacter = () => {
               />
             </CCardBody>
           </CCard>
-
+        </CCol>
+        <CCol sm="12" lg="6">
           <CCard >
             <CCardHeader>
               ITEA Alignment
@@ -299,8 +300,8 @@ const ArchitectureCharacter = () => {
               />
             </CCardBody>
           </CCard>
-        {/* </CRow> */}
-      </CCardGroup>
+        </CCol>
+      </CRow>
     </>
   )
 }
