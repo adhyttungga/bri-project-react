@@ -19,6 +19,7 @@ import {
 import { list, read } from './api-dashboard'
 import plugins from './_plugins'
 import { ReactComponent as ArrowIcon } from '../../assets/icons/ic_outline-arrow.svg'
+import { ReactComponent as BackIcon } from '../../assets/icons/ic_outline-back.svg'
 
 const BusinessValue = () => {
   const [datas, setDatas] = React.useState([])
@@ -95,111 +96,111 @@ const BusinessValue = () => {
 
   return (
     <>
-      <CCardGroup className="mb-4">
-        <CCard className="dashboard-card">
-          <CCardHeader className="dashboard-header">
-            <h3>Business Value</h3>
-            <CButton size="sm" className="dashboard-app-btn btn-brand mr-1 mb-1"><span className="mfs-2">Application</span><ArrowIcon className="avatar-dropdown-icon avatar-arrow-icon"/></CButton>
+      <CCardGroup>
+        <CCard className="border-bottom-0">
+          <CCardHeader className="d-flex">
+            <CButton size="sm" className="btn-brand mr-1"><BackIcon /></CButton>
+            <h3 className="flex-grow-1 m-auto">Business Value</h3>
+            <CButton size="sm" className="dashboard-app-btn btn-brand mr-1"><span className="mfs-2">Aspect</span><ArrowIcon className="avatar-dropdown-icon avatar-arrow-icon"/></CButton>
+            <CButton size="sm" className="dashboard-app-btn btn-brand mr-1"><span className="mfs-2">Criteria</span><ArrowIcon className="avatar-dropdown-icon avatar-arrow-icon"/></CButton>
           </CCardHeader>
         </CCard>
       </CCardGroup>
-      <CRow>
-        <CCol sm="12" lg="5">
-          <CCard >
-            <CCardHeader>
-              Criticality
-            </CCardHeader>
-            <CCardBody>
-              <CChartPie
-                datasets={[
-                  {
-                    backgroundColor: [
-                      '#FF7070',
-                      '#FFCD4E',
-                      '#63C7FF',
-                      '#41B883',
-                      '#E46651',
-                      '#00D8FF',
-                      '#DD1B16'
-                    ],
-                    data: [40, 20, 80, 10],
-                    borderWidth: 0,
-                    polyline: {
-                      color: "gray",
-                      labelColor: "gray",
-                      formatter: (value, dataset) => {
-                        let sum = dataset.data.reduce((a,b)=>a+b);
-                        let percentage = (value*100 / sum).toFixed(2)+"%";
-                        return percentage;
+      <CCardGroup className="mb-4">
+        <CCard>
+          <CCardHeader className="d-flex">
+            <h3 className="flex-grow-1 m-auto">Criticality</h3>
+            <CButton size="sm" className="dashboard-app-btn btn-brand mr-1 mfs-auto"><span className="mfs-2">Sort by</span><ArrowIcon className="avatar-dropdown-icon avatar-arrow-icon"/></CButton>
+          </CCardHeader>
+          <CRow>
+            <CCol sm="12" lg="5">
+              <CCardBody>
+                <CChartPie
+                  datasets={[
+                    {
+                      backgroundColor: [
+                        '#FF7070',
+                        '#FFCD4E',
+                        '#63C7FF',
+                        '#41B883',
+                        '#E46651',
+                        '#00D8FF',
+                        '#DD1B16'
+                      ],
+                      data: [40, 20, 80, 10],
+                      borderWidth: 0,
+                      polyline: {
+                        color: "gray",
+                        labelColor: "gray",
+                        formatter: (value, dataset) => {
+                          let sum = dataset.data.reduce((a,b)=>a+b);
+                          let percentage = (value*100 / sum).toFixed(2)+"%";
+                          return percentage;
+                        }
                       }
                     }
-                  }
-                ]}
-                labels={['VueJs', 'EmberJs', 'ReactJs', 'AngularJs']}
-                options={{
-                  tooltips: {
-                    enabled: false
-                  },
-                  legend: {
-                    position: 'bottom',
-                    labels: {
-                      boxWidth: 18,
-                      fontSize: 12,
-                      fontFamily: 'Poppins',
-                      fontColor: "#939393",
-                      usePointStyle: true,
-                      padding: 30
-                    }
-                  },
-                  layout: {
-                    padding: {
-                      top: 30,
-                      left: 0,
-                      right: 0,
-                      bottom: 0
-                    }
-                  },
-                  aspectRatio: 1.05,
-                  elements: {
-                    line: {
-                      fill: false
+                  ]}
+                  labels={['VueJs', 'EmberJs', 'ReactJs', 'AngularJs']}
+                  options={{
+                    tooltips: {
+                      enabled: false
                     },
-                    point: {
-                      hoverRadius: 7,
-                      radius: 5
+                    legend: {
+                      position: 'bottom',
+                      labels: {
+                        boxWidth: 18,
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                        fontColor: "#939393",
+                        usePointStyle: true,
+                        padding: 30
+                      }
+                    },
+                    layout: {
+                      padding: {
+                        top: 30,
+                        left: 0,
+                        right: 0,
+                        bottom: 0
+                      }
+                    },
+                    aspectRatio: 1.05,
+                    elements: {
+                      line: {
+                        fill: false
+                      },
+                      point: {
+                        hoverRadius: 7,
+                        radius: 5
+                      }
                     }
-                  }
-                }}
-                plugins={plugins}
-              />
-            </CCardBody>
-          </CCard>
-        </CCol>
-        <CCol sm="12" lg="7">
-          <CCard >
-            <CCardHeader>
-              Criticality
-            </CCardHeader>
-            <CCardBody>
-              <CDataTable
-                items={datas}
-                fields={['application', 'mandatory_business']}
-                itemsPerPage={4}
-              />
-            </CCardBody>
-            <CCardBody className="dashboard-pagination">
-              <div>Showing {datas.length} of {page.totalData}</div>
-              <CPagination
-                align="end"
-                doubleArrows={false}
-                activePage={page.currentPage}
-                pages={page.totalPages}
-                onActivePageChange={togglePage}
-              />
-            </CCardBody>
-          </CCard>
-        </CCol>
-      </CRow>
+                  }}
+                  plugins={plugins}
+                />
+              </CCardBody>
+            </CCol>
+            <CCol sm="12" lg="7">
+              <CCardBody>
+                <CDataTable
+                  items={datas}
+                  fields={['application', 'mandatory_business']}
+                  itemsPerPage={4}
+                />
+              </CCardBody>
+              <CCardBody className="dashboard-pagination">
+                <div>Showing {datas.length} of {page.totalData}</div>
+                <CPagination
+                  align="end"
+                  doubleArrows={false}
+                  activePage={page.currentPage}
+                  pages={page.totalPages}
+                  onActivePageChange={togglePage}
+                />
+              </CCardBody>
+            </CCol>
+          </CRow>
+        </CCard>
+      </CCardGroup>
     </>
   )
 }

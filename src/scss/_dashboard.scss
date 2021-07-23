@@ -92,59 +92,59 @@
   .card-body {
     padding: 0 1.25rem;
   }
-  .dashboard-pagination {
-    display: flex;
-    align-items: center;
-    min-height: 50px;
-    max-height: 50px;
-    div {
-      flex-grow: 1;
+}
+.dashboard-pagination {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  max-height: 50px;
+  div {
+    flex-grow: 1;
+    color: #909090;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .pagination {
+    margin: auto;
+    li:first-of-type,
+    li:last-of-type {
+      // opacity: 0;
+      // pointer-events: none;
+      a {
+        font-size: 22px;
+      }
+    }
+    li {
+      width: 31px;
+      height: 31px;
+      text-align: center;
+    }
+    a,
+    span {
+      border: none;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
       color: #909090;
-      font-size: 12px;
-      line-height: 18px;
     }
-    .pagination {
-      margin: auto;
-      li:first-of-type,
-      li:last-of-type {
-        // opacity: 0;
-        // pointer-events: none;
-        a {
-          font-size: 22px;
-        }
-      }
-      li {
-        width: 31px;
-        height: 31px;
-        text-align: center;
-      }
-      a,
-      span {
-        border: none;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 21px;
-        color: #909090;
-      }
-      .page-link {
-        padding: 0.18rem 0.55rem;
-        &:focus {
-          box-shadow: none;
-        }
+    .page-link {
+      padding: 0.18rem 0.55rem;
+      &:focus {
+        box-shadow: none;
       }
     }
-    .page-item.active .page-link {
-      z-index: 3;
-      color: #909090;
-      background: #dff0ff;
-      border-color: #dff0ff;
-      border-radius: 2px;
-    }
-    .page-item.disabled .page-link {
-      color: #e3e3e3;
-    }
+  }
+  .page-item.active .page-link {
+    z-index: 3;
+    color: #909090;
+    background: #dff0ff;
+    border-color: #dff0ff;
+    border-radius: 2px;
+  }
+  .page-item.disabled .page-link {
+    color: #e3e3e3;
   }
 }
 
