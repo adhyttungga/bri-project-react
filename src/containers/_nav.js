@@ -4,7 +4,6 @@ import { ReactComponent as APMMatrixIcon } from '../assets/icons/ic_outline-apmm
 import { ReactComponent as DashboardIcon } from '../assets/icons/ic_outline-dashboard.svg'
 import { ReactComponent as InventoryIcon } from '../assets/icons/ic_outline-inventory.svg'
 import { ReactComponent as ReportsIcon } from '../assets/icons/ic_outline-reports.svg'
-import Dashboard from 'src/views/dashboard/Dashboard'
 
 const _nav =  
   // {
